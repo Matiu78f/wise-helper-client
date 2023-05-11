@@ -15,7 +15,7 @@ function AgregarTarea() {
   const notify = () => {
     // toast.success("Informacion Actualizada");
     toast.promise(save(), {
-      loading: "Acgregar Tarea...",
+      loading: "Agregar Tarea...",
       success: <b>Tarea Agregada</b>,
       error: <b>Could not save.</b>,
     });
