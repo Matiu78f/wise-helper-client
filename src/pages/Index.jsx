@@ -78,47 +78,53 @@ function Index() {
         </header>
 
         <section>
-          <div>
-            <div id="img" style={{ backgroundImage: `url(${carrusel_img})` }}>
-              <h2>{carrusel_h2}</h2>
-              <p>{carrusel_p}</p>
+          {/*--Div contenedor de la imagen --*/}
+          <div id="img" style={{ backgroundImage: `url(${carrusel_img})` }}>
+            {/*--La imagen tiene flex direction column--*/} 
+            <h2>{carrusel_h2}</h2>
+            <div>
+              <a
+                className="carousel-control prev"
+                href="#carousel"
+                role="button"
+                data-slide="prev"
+                onClick={() => {
+                  if (currentIndex <= 0) {
+                    setCurrentIndex(contentList.length - 1);
+                  } else {
+                    setCurrentIndex(currentIndex - 1);
+                  }
+                  changeContent(currentIndex);
+                }}
+              >
+                <span className="carousel-control-icon" aria-hidden="true"></span>
+                <span className="sr-only"> {"<"} </span>
+              </a>
+              <a
+                className="carousel-control next"
+                href="#carousel"
+                role="button"
+                data-slide="next"
+                onClick={() => {
+                  if (currentIndex >= contentList.length - 1) {
+                    setCurrentIndex(0);
+                  } else {
+                    setCurrentIndex(currentIndex + 1);
+                  }
+                  changeContent(currentIndex);
+                }}
+              >
+                <span className="carousel-control-icon" aria-hidden="true"></span>
+                <span className="sr-only"> {">"}</span>
+              </a>
             </div>
-            <a
-              className="carousel-control prev"
-              href="#carousel"
-              role="button"
-              data-slide="prev"
-              onClick={() => {
-                if (currentIndex <= 0) {
-                  setCurrentIndex(contentList.length - 1);
-                } else {
-                  setCurrentIndex(currentIndex - 1);
-                }
-                changeContent(currentIndex);
-              }}
-            >
-              <span className="carousel-control-icon" aria-hidden="true"></span>
-              <span className="sr-only"> {"<"} </span>
-            </a>
-            <a
-              className="carousel-control next"
-              href="#carousel"
-              role="button"
-              data-slide="next"
-              onClick={() => {
-                if (currentIndex >= contentList.length - 1) {
-                  setCurrentIndex(0);
-                } else {
-                  setCurrentIndex(currentIndex + 1);
-                }
-                changeContent(currentIndex);
-              }}
-            >
-              <span className="carousel-control-icon" aria-hidden="true"></span>
-              <span className="sr-only"> {">"}</span>
-            </a>
+            <p>{carrusel_p}</p>
           </div>
+          
+          <div>
 
+          </div>
+          
           <div>
             <p>@2023 WiseHelpers Colaborative Website - All Right Reserved</p>
           </div>
