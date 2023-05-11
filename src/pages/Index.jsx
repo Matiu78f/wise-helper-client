@@ -6,6 +6,7 @@ import "../css/Index.scss";
 import p1PNG from "../assets/img/p1.png";
 import p2PNG from "../assets/img/p2.png";
 import p3PNG from "../assets/img/p3.png";
+import p4PNG from "../assets/img/tuto.png";
 import { useNavigate } from "react-router-dom";
 import {Soporte3} from "../pages/Soporte3"
 
@@ -123,9 +124,7 @@ function Index() {
             <p>{carrusel_p}</p>
           </div>
           
-          <div>
-
-          </div>
+          <img src={p4PNG} alt="imgTuto" />
           
           <div>
             <p>@2023 WiseHelpers Colaborative Website - All Right Reserved</p>
