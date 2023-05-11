@@ -1,4 +1,4 @@
-div.TareasA div.container {
+div.TareasHistorialA div.container {
   div.panel {
     margin-top: 120px;
     margin-bottom: 10px;
@@ -14,37 +14,6 @@ div.TareasA div.container {
       height: 150vh;
       background: rgb(222, 222, 222);
       border-radius: 0 15px 15px 0;
-
-      div.btns {
-        display: flex;
-        justify-content: space-around;
-        margin: 40px 0px 40px 0px;
-
-        .filtro,
-        .agregar {
-          /*Diseño de los botones de filtrado y agregar tarea*/
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          width: 170px;
-          height: 30px;
-          background: #f1b74d;
-          border-radius: 20px;
-          color: white;
-          font-size: 15px;
-          vertical-align: middle;
-          cursor: pointer;
-          user-select: none;
-
-          svg {
-            width: 20px;
-            height: 20px;
-            margin: 0px 5px 0px 0px;
-            color: white;
-          }
-        }
-      }
 
       div.table {
         /*Div de table*/
@@ -157,19 +126,6 @@ div.TareasA div.container {
         }
       }
 
-      input {
-        /*Diseño Botones de Finalizar y Enviar*/
-        width: fit-content;
-        height: fit-content;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        background: #f1b74d;
-        border-radius: 20px;
-        cursor: pointer;
-        border: 0;
-        padding: 8px 20px 8px 20px;
-      }
 
       > div:nth-of-type(1) {
         /*Bloque: Resumen de datos de voluntario*/
@@ -274,148 +230,6 @@ div.TareasA div.container {
           font-size: 17px;
           text-align: justify;
         }
-
-        input {
-          /*Boton de finalizar*/
-          display: flex;
-          align-self: flex-end;
-          margin-top: 30px;
-        }
-      }
-
-      > div:nth-of-type(3) {
-        /*Bloque*/
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-
-        p {
-          /*Parrafo Texto*/
-          margin-top: 20px;
-          font-weight: bold;
-          font-size: 17px;
-        }
-
-        div.msgs {
-          /*Bloque: contenido de comentarios*/
-          height: 30vw;
-          overflow: auto;
-        }
-
-        div.txtfield {
-          /*Bloque: Textarea y div con imgs de documento y foto*/
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-
-          textarea {
-            /*Sección de texto*/
-            text-decoration: none;
-            width: 100%;
-            max-width: 614px;
-            height: 60px;
-            background: #dedede;
-            border-radius: 20px 20px 0px 0px;
-            border-bottom: 0;
-            resize: none;
-            font-size: 17px;
-            padding: 10px 10px 25px 10px;
-            overflow: auto;
-            outline: none;
-          }
-          div {
-            /*Bloque: div con imgs de documento y foto*/
-            display: flex;
-            flex-direction: row;
-            background: #dedede;
-            padding: 0px 10px 15px 10px;
-            border: 1px solid grey;
-            border-top: 0;
-            width: 100%;
-            max-width: 614px;
-            border-radius: 0px 0px 20px 20px;
-
-            svg {
-              /*Imgs de documento y foto*/
-              width: 25px;
-              height: 23px;
-              margin-right: 10px;
-              cursor: pointer;
-              color: grey;
-              path {
-                stroke: grey;
-              }
-            }
-          }
-        }
-        input {
-          /*Boton: Enviar*/
-          display: flex;
-          align-self: flex-end;
-          border: 0;
-          align-items: center;
-          justify-content: center;
-          margin: 30px 0 0 0;
-        }
-      }
-    }
-
-    section.tarea_desc2 {
-      /*Bloque: detalles de tarea*/
-      display: none;
-      margin: 30px 50px 0px 50px;
-      width: 50%;
-      flex-direction: column;
-
-      section {
-        display: none;
-        margin-bottom: 20px;
-        align-self: flex-end;
-        svg {
-          color: black;
-          font-size: 20px;
-          cursor: pointer;
-        }
-      }
-
-      div {
-        /*Bloque*/
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 30px;
-        border-bottom: 1.5px solid rgba(128, 128, 128, 0.192);
-
-        p:nth-child(1) {
-          /*Cabecera: Descripción de tarea*/
-          font-size: 17px;
-          font-weight: bold;
-          margin-bottom: 15px;
-        }
-        p:nth-child(2) {
-          /*Contenido: Descripción*/
-          font-size: 17px;
-          text-align: justify;
-        }
-      }
-      input {
-        /*Boton de cancelar*/
-        display: flex;
-        align-self: center;
-        margin-top: 30px;
-      }
-
-      input {
-        /*Diseño Botones de Finalizar y Enviar*/
-        width: fit-content;
-        height: fit-content;
-        color: white;
-        font-weight: bold;
-        font-size: 18px;
-        background: #f1b74d;
-        border-radius: 20px;
-        cursor: pointer;
-        border: 0;
-        padding: 8px 20px 8px 20px;
       }
     }
   }
@@ -423,19 +237,6 @@ div.TareasA div.container {
 
 @media screen and (max-width: 1007px) {
   section.tarea_desc {
-    width: 100% !important;
-    & > section {
-      display: unset!important;
-      margin-bottom: 20px;
-      align-self: flex-end;
-      svg {
-        color: black;
-        font-size: 20px;
-        cursor: pointer;
-      }
-    }
-  }
-  section.tarea_desc2 {
     width: 100% !important;
     & > section {
       display: unset!important;

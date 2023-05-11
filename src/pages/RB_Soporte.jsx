@@ -1,9 +1,9 @@
 import React from "react";
 import { Navbar } from "../components/Navbar";
-import "../css/soporte2.css";
+import "../sass/soporte2.scss";
 import {MdMarkUnreadChatAlt, MdSend,MdLocalPhone,MdLiveHelp,MdHelp} from "react-icons/md"
 import {BsHeadset,BsFileEarmarkText} from "react-icons/bs"
-
+import { useNavigate } from "react-router-dom";
 function FAQQuest(props) {
   const [flag, setFlag] = React.useState(0);
   return (
@@ -12,16 +12,17 @@ function FAQQuest(props) {
     }}>
       <div>
         <p>{props.quest}</p>
-        <p style={flag == 1 ? {display:"flex"} : {display:"none"}}>
+        <p style={flag === 1 ? {display:"flex"} : {display:"none"}}>
           {props.answ}
         </p>
       </div>
-      <p>{flag==1 ? "-":"+"}</p>
+      <p>{flag===1 ? "-":"+"}</p>
     </div>
   );
 }
 
 function Soporte() {
+  const navigate=useNavigate();
   const [flag,setFlag]=React.useState([0,1,0]);
   return (
     <div className="Soporte">
@@ -32,17 +33,17 @@ function Soporte() {
 
         <div className="btns">
           {/*Bloque de botones*/}
-          <div class="Guia" onClick={()=>{if(flag[0]==0) setFlag([1-flag[0],0,0])}} >
+          <div class="Guia" onClick={()=>{navigate("/tyc")}} >
             <BsFileEarmarkText/>
-            <p>Guía</p>
+            <p>TyC</p>
           </div>
 
-          <div class="FAQ" onClick={()=>{if(flag[1]==0) setFlag([0,1-flag[1],0])}} >
+          <div class="FAQ" onClick={()=>{if(flag[1]===0) setFlag([0,1-flag[1],0])}} >
             <MdHelp/>
             <p>FAQ</p>
           </div>
 
-          <div class="Contacto" onClick={()=>{if(flag[2]==0) setFlag([0,0,1-flag[2]])}} >
+          <div class="Contacto" onClick={()=>{if(flag[2]===0) setFlag([0,0,1-flag[2]])}} >
             <BsHeadset/>
             <p>Contacto</p>
           </div>
@@ -52,11 +53,11 @@ function Soporte() {
         <div className="content">
           {/*Bloque de contenido de cada sección*/}
 
-          <div class="Guia" style={flag[0]==1 ? {display:"flex"}:{display:"none"}}>
+          <div class="Guia" style={flag[0]===1 ? {display:"flex"}:{display:"none"}}>
             {/*Todavía no está completa la aplicación*/}
           </div>
 
-          <div class="FAQ" style={flag[1]==1 ? {display:"flex"}:{display:"none"}}>
+          <div class="FAQ" style={flag[1]===1 ? {display:"flex"}:{display:"none"}}>
             {/*Bloque de Preguntas Frecuentes*/}
             <h1>Preguntas frecuentes</h1>
             <section>
@@ -138,7 +139,7 @@ function Soporte() {
             </section>
           </div>
 
-          <div class="Contacto" style={flag[2]==1 ? {display:"flex"}:{display:"none"}} >
+          <div class="Contacto" style={flag[2]===1 ? {display:"flex"}:{display:"none"}} >
             {/*Bloque de contacto*/}
             <h1>Contacto</h1>
             <section>
@@ -162,7 +163,7 @@ function Soporte() {
                     pronto posible.
                   </p>
                 </div>
-                <MdSend/>
+                <MdSend onClick={()=>navigate("send-message")}/>
               </div>
             </section>
           </div>

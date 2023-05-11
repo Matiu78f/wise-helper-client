@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import Logo from "../assets/img/logo_n.png";
@@ -27,6 +28,7 @@ function Index() {
       src: p3PNG,
     },
   ];
+  
   const [carrusel_h2, setCarrusel_h2] = React.useState(contentList[0].h2);
   const [carrusel_p, setCarrusel_p] = React.useState(contentList[0].p);
   const [carrusel_img, setCarrusel_img] = React.useState(contentList[0].src);

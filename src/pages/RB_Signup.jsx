@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
-import "../css/signup2.css";
+import "../sass/rb_signup.scss";
 import img3 from "../assets/img/img3.png";
 import img4 from "../assets/img/img4.png";
 import Alert from '@mui/material/Alert';
@@ -16,7 +17,7 @@ function Signup() {
 
     <div className="Signup">
       {flag3 && pass.length<8 ? <Alert severity="error">La contraseña debe tener como mínimo 8 caracteres.</Alert>: <></>}
-      {flag3 && isValidDNI(id)==false ? <Alert severity="error">La cedula no es válida.</Alert>: <></>}
+      {flag3 && isValidDNI(id)===false ? <Alert severity="error">La cedula no es válida.</Alert>: <></>}
   
       <div className="container"> 
         <div className="form">
